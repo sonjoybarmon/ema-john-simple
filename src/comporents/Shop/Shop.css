@@ -1,0 +1,13 @@
+.shop_content{
+    display: flex;
+
+}
+.product{
+    width: 70%;
+    margin-left: 30px;
+    margin-right: 10px;
+    padding: 10px;
+    border-right: 1px solid lightblue;
+}
+.product_info{
+}
