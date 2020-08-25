@@ -1,0 +1,8 @@
+.cart_info{
+    margin: 10px;
+}
+.cart_info p{
+    font-size: 25px;
+    color: #000000;
+    font-weight: 700;
+}

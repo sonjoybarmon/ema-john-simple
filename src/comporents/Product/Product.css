@@ -1,0 +1,20 @@
+.product-content{
+    display: flex;
+    border-bottom: 1px solid gray;
+}
+.product-info{
+    margin: 20px 15px;
+}
+.main-btn{
+    padding: 10px 25px;
+    background-color: goldenrod;
+    color: #333333;
+    font-size: 20px;
+}
+
+/* .product-img{
+    width: 30%;
+}
+.product-info{
+    width: 70%;
+} */
