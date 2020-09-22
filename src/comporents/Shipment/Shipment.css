@@ -1,0 +1,17 @@
+.form-body{
+    width: 40%;
+    border: 1px solid #666666;
+    overflow: hidden;
+    margin : auto;
+}
+.form_input{
+    width: 100%;
+    display: block;
+    padding :15px 10px;
+    margin: 10px 5px;
+}
+.form_btn{
+    padding: 15px 100px;
+    font-size: 20px;
+    margin-left: 130px;
+}

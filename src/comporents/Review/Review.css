@@ -1,0 +1,12 @@
+.review_content{
+    width: 100%;
+    display: flex;
+}
+.left_site{
+    width: 70%;
+    border-right: 1px solid #666666;
+    padding-right: 20px;
+}
+.right_site{
+    width:30%;
+}
