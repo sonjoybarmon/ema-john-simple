@@ -3,7 +3,7 @@ import React from 'react';
 const Manege = () => {
     const product = {};
     const handleAddProduct = () => {
-        fetch('http://localhost:8080/addProduct',{
+        fetch('https://polar-depths-00406.herokuapp.com/addProduct',{
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(product)

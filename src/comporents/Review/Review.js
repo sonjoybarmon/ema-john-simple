@@ -27,7 +27,7 @@ const Review = () => {
         const saveData = getDatabaseCart();
         const productKeys = Object.keys(saveData);
 
-        fetch('http://localhost:8080/sameProducts',{
+        fetch('https://polar-depths-00406.herokuapp.com/sameProducts',{
             method:'POST',
             headers: {
                 'Content-Type':'application/json'
