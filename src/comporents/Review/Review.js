@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { getDatabaseCart, removeFromDatabaseCart, processOrder } from '../../utilities/databaseManager';
-import fakeData from '../../fakeData';
 import ReviewItems from '../ReviewItems/ReviewItems';
 import Cart from '../Cart/Cart';
 import './Review.css';
@@ -28,12 +27,24 @@ const Review = () => {
         const saveData = getDatabaseCart();
         const productKeys = Object.keys(saveData);
 
-        const cartProducts = productKeys.map( key => {
-        const product = fakeData.find(pd => pd.key === key);
-            product.quantity = saveData[key];
-            return product;
+        fetch('http://localhost:8080/sameProducts',{
+            method:'POST',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(productKeys)
+            })
+            .then(res => res.json())
+            .then(data => {
+                setCart(data)
         })
-        setCart(cartProducts)
+
+        // const cartProducts = productKeys.map( key => {
+        // const product = fakeData.find(pd => pd.key === key);
+        //     product.quantity = saveData[key];
+        //     return product;
+        // })
+        // setCart(cartProducts)
     },[])
 
     let thankYou ;
@@ -43,7 +54,6 @@ const Review = () => {
     return (
         <div className = 'review_content'>
             <div className = 'left_site'>
-                {/* <h1> {cart.length}</h1> */}
                 {
                     cart.map(pd => <ReviewItems 
                         removeProduct ={removeProduct}

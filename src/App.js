@@ -20,7 +20,13 @@ import PrivateRoute from './comporents/PrivateRoute/PrivateRoute';
 export const userContext = createContext();
 
 function App(props) {
-    const [loggedInUser , setLoggedInUser] = useState({});
+    const [loggedInUser , setLoggedInUser] = useState({
+        isSignIn : false,
+        name : '',
+        email : '',
+        photo : '',
+        password : '',
+    });
   return (
     <userContext.Provider value={[loggedInUser , setLoggedInUser]}>
         <h3>email : {loggedInUser.email}</h3>

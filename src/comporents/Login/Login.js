@@ -90,12 +90,12 @@ return (
             <h1> please sign in you account</h1>  
            
                 { 
-                user.IsSignedIn ? <button onClick={googleSignOut} > Sign out </button> :
+                user.isSignIn ? <button onClick={googleSignOut} > Sign out </button> :
                 <button onClick={googleSignIn} > Sign In </button> 
                 }
                 <button onClick ={handleFb}>fb Log in</button>
 
-                {user.IsSignedIn && <div>
+                {user.isSignIn && <div>
                      <h1>welcome to {user.name}</h1>
                      <h1>Email : {user.email}</h1>
                      <img src={user.photo} alt=""/>
