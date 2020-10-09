@@ -13,7 +13,7 @@ export const handleGoogleSignIn = () => {
         .then( res =>{
             const {displayName ,photoURL, email} = res.user;
             const signedInUser ={
-                IsSignedIn : true,
+                isSignedIn : true,
                 name : displayName,
                 email : email,
                 photo : photoURL,
@@ -45,7 +45,7 @@ export const handleSignOut = () =>{
    return firebase.auth().signOut()
     .then( res => {
         const signOutUser ={
-            IsSignedIn : false,
+            isSignedIn : false,
             name: '',
             photo : '', 
             email : '',
