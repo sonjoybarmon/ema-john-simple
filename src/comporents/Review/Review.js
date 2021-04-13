@@ -16,9 +16,6 @@ const Review = () => {
   const history = useHistory();
   const handleProceedCheckout = () => {
     history.push("/shipment");
-    // setCart([]);
-    // setOrderPlaced(true);
-    // processOrder();
   };
 
   const removeProduct = (product) => {
@@ -42,13 +39,6 @@ const Review = () => {
       .then((data) => {
         setCart(data);
       });
-
-    // const cartProducts = productKeys.map( key => {
-    // const product = fakeData.find(pd => pd.key === key);
-    //     product.quantity = saveData[key];
-    //     return product;
-    // })
-    // setCart(cartProducts)
   }, []);
 
   let thankYou;
@@ -56,17 +46,31 @@ const Review = () => {
     thankYou = <img src={happyImage} alt="" />;
   }
   return (
-    <div className="review_content">
-      <div className="left_site">
-        {cart?.map((pd) => (
-          <ReviewItems
-            key={pd.id}
-            removeProduct={removeProduct}
-            product={pd}
-          ></ReviewItems>
-        ))}
-        {thankYou}
-      </div>
+    <div className="review_content container">
+      {cart.length === 0 ? (
+        <div
+          style={{
+            width: "70%",
+            height: "70vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <h6>No Products available</h6>
+        </div>
+      ) : (
+        <div className="left_site">
+          {cart?.map((pd) => (
+            <ReviewItems
+              key={pd.id}
+              removeProduct={removeProduct}
+              product={pd}
+            ></ReviewItems>
+          ))}
+          {thankYou}
+        </div>
+      )}
       <div className="right_site">
         <Cart card={cart}>
           <button
